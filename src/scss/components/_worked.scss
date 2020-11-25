@@ -1,0 +1,112 @@
+.worked {
+  padding: 135px 0 123px;
+  max-width: 72%;
+
+  &__title {
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: var(--color-worked-text);
+  }
+
+  &__description {
+    display: flex;
+    margin-bottom: 60px;
+  }
+
+  &__subtitle {
+    flex-shrink: 0;
+    margin-right: 10%;
+    max-width: 585px;
+    font-family: "Georgia", serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 157%;
+    color: var(--color-main);
+  }
+
+  &__text {
+    margin-top: 25px;
+    line-height: 150%;
+  }
+}
+
+.info {
+  display: flex;
+
+  &__article {
+    position: relative;
+    padding-top: 135px;
+    max-width: 28%;
+
+    &:not(:last-child) {
+      margin-right: 95px;
+    }
+
+    &--2 {
+      margin-top: 287px;
+    }
+
+    &--3 {
+      margin-top: 54px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 61px;
+    font-family: "Georgia", serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+
+    &--1 {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7%;
+        display: block;
+        width: 157px;
+        height: 225px;
+        background: url("../img/sprite.svg#01") no-repeat;
+      }
+    }
+
+    &--2 {
+      text-align: right;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7%;
+        display: block;
+        width: 157px;
+        height: 225px;
+        background: url("../img/sprite.svg#02") no-repeat;
+      }
+    }
+
+    &--3 {
+      margin-bottom: 53px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 6%;
+        top: 7%;
+        display: block;
+        width: 157px;
+        height: 225px;
+        background: url("../img/sprite.svg#03") no-repeat;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 38px;
+  }
+
+  &__image {
+    border-radius: 12px;
+  }
+}

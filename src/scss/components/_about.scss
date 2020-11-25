@@ -1,0 +1,33 @@
+.about {
+  display: flex;
+  justify-content: space-between;
+  padding: 230px 206px 175px;
+  background-color: var(--color-bg-dark);
+
+  &__content {
+    padding-top: 81px;
+    color: var(--color-white);
+  }
+
+  &__title {
+    margin-bottom: 41px;
+    max-width: 90%;
+    font-family: "Georgia", serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 157%;
+  }
+
+  &__description {
+    margin-bottom: 62px;
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+
+  &__btn {
+    @include site-button;
+
+    padding: 20px 50px;
+  }
+}

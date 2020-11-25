@@ -1,0 +1,46 @@
+.header {
+  background-color: var(--color-white);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 15px 7px;
+  }
+
+  &__logo {
+    display: inline-block;
+    width: 80px;
+    height: 23px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: var(--color-main);
+    }
+  }
+
+  &__start {
+    @include site-button;
+
+    margin-left: 26px;
+    padding: 13px 50px;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 105px;
+    color: var(--color-header-text);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 72px;
+    }
+  }
+}

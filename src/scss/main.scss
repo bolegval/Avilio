@@ -1,0 +1,22 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "vendor";
+@import "settings";
+
+/* Components */
+@import "./components/header";
+@import "./components/hero";
+@import "./components/worked";
+@import "./components/about";
+@import "./components/product";
+@import "./components/footer";
+
+// CUSTOM COMPONENTS STYLES
+// .burger {
+//   --burger-width: 40px;
+//   --burger-height: 20px;
+//   --burger-line-height: 2px;
+
+//   @include burger;
+// }

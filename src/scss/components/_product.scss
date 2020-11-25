@@ -1,0 +1,85 @@
+.product {
+  position: relative;
+  display: flex;
+  padding: 127px 0 196px 60px;
+
+  &__content {
+    max-width: 35%;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 157%;
+    color: var(--color-worked-text);
+  }
+
+  &__subtitle {
+    margin-bottom: 25px;
+    font-family: "Georgia", serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 157%;
+    color: var(--color-main);
+  }
+
+  &__description {
+    margin-bottom: 31px;
+    max-width: 85%;
+    font-weight: 400;
+    line-height: 145%;
+    color: var(--color-hero-text);
+  }
+
+  &__btn {
+    @include site-button;
+
+    padding: 20px 50px;
+  }
+}
+
+.person {
+  margin-right: 85px;
+
+  &__info {
+    position: absolute;
+    left: 0;
+    bottom: 15%;
+    border-radius: 4px;
+    padding: 23px 60px 30px;
+    text-align: center;
+    color: var(--color-black);
+    background-color: var(--color-white);
+  }
+
+  &__title {
+    display: inline-block;
+    border-bottom: 1px solid var(--color-black);
+    padding-bottom: 8px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  & figcaption {
+    font-size: 12px;
+  }
+
+  &__contents {
+    font-family: "Georgia", serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__list {
+    list-style: disc;
+    font-size: 11px;
+    text-align: left;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+}
