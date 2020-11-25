@@ -16,6 +16,10 @@
     font-weight: 700;
     font-size: 50px;
     line-height: 157%;
+
+    @include desktop-1460 {
+      font-size: 35px;
+    }
   }
 
   &__description {
@@ -23,11 +27,24 @@
     font-weight: 600;
     font-size: 25px;
     letter-spacing: 1px;
+
+    @include desktop-1460 {
+      font-size: 20px;
+    }
   }
 
   &__btn {
     @include site-button;
 
     padding: 20px 50px;
+  }
+
+  &__video {
+    max-width: 60%;
+    object-fit: contain;
+  }
+
+  @include desktop {
+    padding: 180px 80px 130px;
   }
 }
