@@ -7,6 +7,14 @@
   &__content {
     padding-top: 81px;
     color: var(--color-white);
+
+    @include desktop-1500 {
+      padding-top: 35px;
+    }
+
+    @include mobile-medium {
+      order: 5;
+    }
   }
 
   &__title {
@@ -17,8 +25,17 @@
     font-size: 50px;
     line-height: 157%;
 
-    @include desktop-1460 {
+    @include desktop-1500 {
       font-size: 35px;
+    }
+
+    @include mobile-small {
+      margin-bottom: 25px;
+      font-size: 25px;
+    }
+
+    @include mobile-small {
+      max-width: none;
     }
   }
 
@@ -28,8 +45,18 @@
     font-size: 25px;
     letter-spacing: 1px;
 
-    @include desktop-1460 {
+    @include desktop-1500 {
+      max-width: 80%;
       font-size: 20px;
+    }
+
+    @include mobile-small {
+      margin-bottom: 35px;
+      font-size: 16px;
+    }
+
+    @include mobile-small {
+      max-width: none;
     }
   }
 
@@ -42,9 +69,27 @@
   &__video {
     max-width: 60%;
     object-fit: contain;
+
+    @include mobile-medium {
+      max-width: 100%;
+    }
   }
 
   @include desktop {
     padding: 180px 80px 130px;
+  }
+
+  @include desktop-small {
+    padding: 110px 80px 95px;
+  }
+
+  @include mobile-medium {
+    flex-direction: column;
+    padding: 65px 55px 75px;
+  }
+
+  @include mobile-small {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }

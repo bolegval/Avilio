@@ -3,4 +3,8 @@
   line-height: 25px;
   color: var(--color-white);
   background: var(--color-main);
+
+  @include mobile-small {
+    width: 100%;
+  }
 }

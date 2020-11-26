@@ -1,10 +1,14 @@
 .product {
   position: relative;
   display: flex;
-  padding: 127px 0 196px 60px;
+  padding: 127px 15px 196px 60px;
 
   &__content {
     max-width: 35%;
+
+    @include mobile-medium {
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -22,6 +26,10 @@
     font-size: 50px;
     line-height: 157%;
     color: var(--color-main);
+
+    @include mobile-small {
+      font-size: 27px;
+    }
   }
 
   &__description {
@@ -30,6 +38,10 @@
     font-weight: 400;
     line-height: 145%;
     color: var(--color-hero-text);
+
+    @include mobile-small {
+      font-size: 16px;
+    }
   }
 
   &__btn {
@@ -37,10 +49,29 @@
 
     padding: 20px 50px;
   }
+
+  @include mobile {
+    padding-top: 85px;
+    padding-bottom: 65px;
+  }
+
+  @include mobile-medium {
+    flex-direction: column;
+  }
+
+  @include mobile-small {
+    padding: 40px 15px 55px;
+  }
 }
 
 .person {
   margin-right: 85px;
+
+  &__image {
+    @include mobile-small {
+      margin-bottom: 35px;
+    }
+  }
 
   &__info {
     position: absolute;
@@ -51,6 +82,16 @@
     text-align: center;
     color: var(--color-black);
     background-color: var(--color-white);
+
+    @include mobile-medium {
+      left: -5%;
+      bottom: -17%;
+    }
+
+    @include mobile-small {
+      position: initial;
+      order: 5;
+    }
   }
 
   &__title {
@@ -81,5 +122,17 @@
     &:not(:last-child) {
       margin-bottom: 25px;
     }
+  }
+
+  @include mobile-medium {
+    position: relative;
+    margin-right: 0;
+    margin-bottom: 145px;
+  }
+
+  @include mobile-small {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
   }
 }

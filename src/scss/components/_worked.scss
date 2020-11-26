@@ -11,6 +11,11 @@
   &__description {
     display: flex;
     margin-bottom: 60px;
+
+    @include mobile-medium {
+      flex-direction: column;
+      margin: 0;
+    }
   }
 
   &__subtitle {
@@ -22,11 +27,24 @@
     font-size: 50px;
     line-height: 157%;
     color: var(--color-main);
+
+    @include mobile-small {
+      font-size: 30px;
+    }
   }
 
   &__text {
     margin-top: 25px;
     line-height: 150%;
+  }
+
+  @include desktop-small {
+    max-width: 85%;
+  }
+
+  @include mobile {
+    padding: 75px 15px 65px;
+    max-width: 100%;
   }
 }
 
@@ -40,14 +58,38 @@
 
     &:not(:last-child) {
       margin-right: 95px;
+
+      @include mobile-768 {
+        margin-right: 0;
+      }
     }
 
     &--2 {
       margin-top: 287px;
+
+      @include mobile-medium {
+        margin-top: 150px;
+      }
+
+      @include mobile-small {
+        margin: 0;
+      }
     }
 
     &--3 {
       margin-top: 54px;
+
+      @include mobile-768 {
+        margin: 0 auto;
+      }
+    }
+
+    @include mobile-768 {
+      max-width: 47%;
+    }
+
+    @include mobile-small {
+      max-width: none;
     }
   }
 
@@ -84,6 +126,10 @@
         height: 225px;
         background: url("../img/sprite.svg#02") no-repeat;
       }
+
+      @include mobile-small {
+        text-align: center;
+      }
     }
 
     &--3 {
@@ -108,5 +154,19 @@
 
   &__image {
     border-radius: 12px;
+
+    @include mobile-small {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  @include mobile-768 {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @include mobile-small {
+    flex-direction: column;
   }
 }

@@ -21,6 +21,18 @@
     }
   }
 
+  &__signin--mobile {
+    width: var(--burger-width);
+    height: var(--burger-height);
+    background: url("../img/sprite.svg#signin") center/cover no-repeat;
+  }
+
+  &__btn {
+    @include mobile {
+      display: none;
+    }
+  }
+
   &__start {
     @include site-button;
 
@@ -43,4 +55,12 @@
       margin-right: 72px;
     }
   }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.burger {
+  @include burger;
 }

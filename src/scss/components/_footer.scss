@@ -4,6 +4,11 @@
   &__container {
     padding-top: 95px;
     padding-bottom: 120px;
+
+    @include mobile-medium {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
   }
 
   &__logo {
