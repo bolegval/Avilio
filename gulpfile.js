@@ -16,7 +16,6 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const fs = require('fs');
-const tiny = require('gulp-tinypng-compress');
 const rev = require('gulp-rev');
 const revRewrite = require('gulp-rev-rewrite');
 const revdel = require('gulp-rev-delete-original');
@@ -221,18 +220,6 @@ exports.fontsStyle = fontsStyle;
 exports.default = series(clean, parallel(htmlInclude, scripts, fonts, resources, imgToApp, svgSprites), fontsStyle, styles, watchFiles);
 
 // BUILD
-const tinypng = () => {
-  return src(['./src/img/**.jpg', './src/img/**.png', './src/img/**.jpeg'])
-    .pipe(tiny({
-      key: '',
-      sigFile: './app/img/.tinypng-sigs',
-      parallel: true,
-      parallelMax: 50,
-      log: true,
-    }))
-    .pipe(dest('./app/img'))
-}
-
 const stylesBuild = () => {
   return src('./src/scss/**/*.scss')
     .pipe(sass({
@@ -310,29 +297,4 @@ const htmlMinify = () => {
 
 exports.cache = series(cache, rewrite);
 
-exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, resources, imgToApp, svgSprites), fontsStyle, stylesBuild, htmlMinify, tinypng);
-
-
-// deploy
-const deploy = () => {
-  let conn = ftp.create({
-    host: '',
-    user: '',
-    password: '',
-    parallel: 10,
-    log: gutil.log
-  });
-
-  let globs = [
-    'app/**',
-  ];
-
-  return src(globs, {
-      base: './app',
-      buffer: false
-    })
-    .pipe(conn.newer('')) // only upload newer files
-    .pipe(conn.dest(''));
-}
-
-exports.deploy = deploy;
+exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, resources, imgToApp, svgSprites), fontsStyle, stylesBuild, htmlMinify);
